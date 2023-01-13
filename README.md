@@ -26,6 +26,6 @@ git clone git@github.com:peymor19/.dotfiles.git ~/.dotfiles
 Install dotfiles:
 ```
 cd ~/.dotfiles/
-stow */
+stow --target=$(HOME) */
 ```
 
