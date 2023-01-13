@@ -1,0 +1,20 @@
+{
+  "diagnostic.errorSign": "✘",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+
+  "Lua.diagnostics.globals": ["vim"],
+
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "trace.server": "verbose",
+      "filetypes": ["go"]
+    },
+    "lua": {
+        "command": "lua",
+        "filetypes": ["lua"]
+    }
+  }
+}

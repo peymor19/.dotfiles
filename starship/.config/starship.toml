@@ -1,0 +1,35 @@
+[line_break]
+disabled = false
+
+[username]
+style_user = "blue bold"
+style_root = "red bold"
+format = "[$user]($style) in "
+disabled = false
+show_always = true
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) " 
+
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = " "
+style = "bold yellow"
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](bold red)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+[package]
+disabled = false
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
+
+[php]
+disabled = true
