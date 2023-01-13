@@ -1,6 +1,5 @@
 # dotfiles
-These are the main dotfiles in my .config/
-The dotfiles are mean to be installed using [stow](https://www.gnu.org/software/stow/manual/stow.html#:~:text=The%20approach%20used%20by%20Stow,from%20clutter%20from%20other%20packages.)
+The dotfiles are meant to be installed using [stow](https://www.gnu.org/software/stow/manual/stow.html#:~:text=The%20approach%20used%20by%20Stow,from%20clutter%20from%20other%20packages.)
 
 ## Requirements
 
