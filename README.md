@@ -9,7 +9,7 @@ Install these with your preferred package manager or from source:
 stow
 fish
 nvim
-startship
+starship
 ```
 
 ### Set-Up
