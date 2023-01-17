@@ -56,10 +56,7 @@ return packer.startup(function(use)
     use {'neoclide/coc.nvim', branch = 'release'}
     use {'folke/tokyonight.nvim', branch = 'main' }
     use {'nvim-telescope/telescope.nvim', branch = '0.1.x'}
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
+    use({"iamcco/markdown-preview.nvim",run = function() vim.fn["mkdp#util#install"]() end,})
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
     use {'prettier/vim-prettier', run = 'npm install', ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'}}
     use {"startup-nvim/startup.nvim",requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
@@ -69,4 +66,10 @@ return packer.startup(function(use)
     if packer_bootstrap then
         require('packer').sync()
     end
+    use {
+        'lewis6991/gitsigns.nvim', tag = 'release',
+        config = function ()
+            require('gitsigns').setup()
+        end
+    }
 end)

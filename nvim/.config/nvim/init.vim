@@ -110,6 +110,7 @@ require('plug-config/toggleterm')
 require('plug-config/plugins')
 require('plug-config/tokyonight')
 require('plug-config/null-ls')
+require('plug-config/gitsigns')
 require('plug-config/wilder')
 require('options')
 EOF
