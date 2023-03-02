@@ -16,7 +16,7 @@ vim.cmd [[
     augroup packer_user_config
         autocmd!
         autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end 
+    augroup end
 ]]
 
 -- Use a protected call so we don't error out on first use
@@ -43,6 +43,7 @@ return packer.startup(function(use)
     use 'preservim/nerdtree'
     use 'bkegley/gloombuddy'
     use 'rstacruz/vim-closer'
+    use 'folke/zen-mode.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'vim-scripts/phpcs.vim'
     use 'romgrk/fzy-lua-native'
@@ -52,12 +53,12 @@ return packer.startup(function(use)
     use 'vim-airline/vim-airline-themes'
     use 'nvim-treesitter/nvim-treesitter'
     use 'jose-elias-alvarez/null-ls.nvim'
+    use 'lukas-reineke/indent-blankline.nvim'
     use {'catppuccin/vim', as = 'catppuccin' }
     use {'neoclide/coc.nvim', branch = 'release'}
     use {'folke/tokyonight.nvim', branch = 'main' }
     use {'nvim-telescope/telescope.nvim', branch = '0.1.x'}
-    use({"iamcco/markdown-preview.nvim",run = function() vim.fn["mkdp#util#install"]() end,})
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use {'prettier/vim-prettier', run = 'npm install', ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'}}
     use {"startup-nvim/startup.nvim",requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
     config = function()
@@ -72,4 +73,23 @@ return packer.startup(function(use)
             require('gitsigns').setup()
         end
     }
+    use{
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        config = function()
+            require("barbecue").setup({
+              create_autocmd = false, -- prevent barbecue from updating itself automatically
+          })
+        end,
+   }
+   use({
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    })
 end)
